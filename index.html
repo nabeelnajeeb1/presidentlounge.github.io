@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mr. President Lounge Meeting Assistant – Power International Holding">
+<title>Mr. President Lounge | Meeting Assistant – Power International Holding</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --pih-navy:#0a1f3c;
+  --pih-navy-2:#10294e;
+  --pih-navy-3:#1a3a6b;
+  --pih-gold:#c9a24b;
+  --pih-gold-light:#e3c98a;
+  --pih-white:#ffffff;
+  --pih-success:#2e9e5b;
+  --pih-info:#3a8dde;
+  --pih-grey:#f4f6f9;
+  --pih-text:#243046;
+  --shadow-card:0 10px 30px rgba(10,31,60,.10);
+  --shadow-card-hover:0 22px 50px rgba(10,31,60,.18);
+}
+
+*{ -webkit-tap-highlight-color:transparent; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--pih-grey);
+  color:var(--pih-text);
+  overflow-x:hidden;
+}
+
+/* ---------- HEADER / HERO ---------- */
+.hero{
+  background:
+    radial-gradient(1100px 500px at 85% -10%, rgba(201,162,75,.18), transparent 60%),
+    radial-gradient(900px 420px at -10% 110%, rgba(58,141,222,.14), transparent 60%),
+    linear-gradient(150deg, var(--pih-navy) 0%, var(--pih-navy-2) 55%, var(--pih-navy-3) 100%);
+  color:var(--pih-white);
+  padding:3.2rem 1rem 5.2rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:-1px; height:80px;
+  background:var(--pih-grey);
+  clip-path:ellipse(75% 100% at 50% 100%);
+}
+.gold-line{
+  width:64px; height:3px; border-radius:2px;
+  background:linear-gradient(90deg,var(--pih-gold),var(--pih-gold-light));
+  margin:1.1rem auto;
+}
+.brand-wordmark{
+  display:inline-flex; flex-direction:column; align-items:center; gap:.15rem;
+  text-decoration:none;
+}
+.brand-wordmark .wm-top{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,4.5vw,2.1rem);
+  font-weight:700; letter-spacing:.18em;
+  color:var(--pih-white);
+}
+.brand-wordmark .wm-top span{ color:var(--pih-gold); }
+.brand-wordmark .wm-bottom{
+  font-size:clamp(.62rem,1.8vw,.78rem);
+  font-weight:500; letter-spacing:.52em; text-transform:uppercase;
+  color:rgba(255,255,255,.75);
+  padding-left:.52em;
+}
+.brand-logo-img{ max-height:64px; width:auto; }
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.7rem,5.4vw,2.9rem);
+  font-weight:600; margin-top:.4rem;
+}
+.hero .subtitle{
+  color:var(--pih-gold-light);
+  font-weight:500; letter-spacing:.06em;
+  font-size:clamp(.95rem,2.6vw,1.1rem);
+}
+.hero .lead-desc{
+  color:rgba(255,255,255,.82);
+  max-width:620px; margin:0 auto;
+  font-weight:300;
+  font-size:clamp(.9rem,2.5vw,1.02rem);
+}
+
+/* ---------- CARDS ---------- */
+.cards-wrap{ margin-top:-3.2rem; position:relative; z-index:5; }
+.option-card{
+  background:var(--pih-white);
+  border:1px solid rgba(10,31,60,.06);
+  border-radius:1.25rem;
+  box-shadow:var(--shadow-card);
+  transition:transform .35s cubic-bezier(.2,.8,.3,1), box-shadow .35s;
+  overflow:hidden;
+  height:100%;
+  display:flex; flex-direction:column;
+}
+.option-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-card-hover); }
+.option-card .card-top{ padding:1.9rem 1.6rem 0; text-align:center; }
+.icon-badge{
+  width:74px; height:74px; margin:0 auto 1.1rem;
+  border-radius:1.1rem;
+  display:flex; align-items:center; justify-content:center;
+  font-size:2rem; color:var(--pih-white);
+  background:linear-gradient(135deg,var(--pih-navy-2),var(--pih-navy-3));
+  box-shadow:0 8px 20px rgba(10,31,60,.25);
+  position:relative;
+}
+.icon-badge::after{
+  content:""; position:absolute; inset:-4px;
+  border-radius:1.3rem;
+  border:1.5px solid rgba(201,162,75,.45);
+}
+.option-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem; font-weight:600; color:var(--pih-navy);
+}
+.option-card .card-desc{
+  font-size:.92rem; color:#5a6478;
+  min-height:3.4rem;
+}
+.btn-pih{
+  background:linear-gradient(135deg,var(--pih-navy-2),var(--pih-navy-3));
+  color:var(--pih-white);
+  border:none; border-radius:.7rem;
+  padding:.7rem 1.5rem;
+  font-weight:600; font-size:.92rem; letter-spacing:.02em;
+  transition:all .3s;
+  min-height:46px;
+}
+.btn-pih:hover,.btn-pih:focus{
+  background:linear-gradient(135deg,var(--pih-navy-3),var(--pih-navy-2));
+  color:var(--pih-gold-light);
+  box-shadow:0 8px 18px rgba(10,31,60,.3);
+  transform:translateY(-1px);
+}
+.btn-pih .bi{ transition:transform .3s; }
+.btn-pih[aria-expanded="true"] .bi-chevron-down{ transform:rotate(180deg); }
+
+.instructions{
+  background:#fbfcfe;
+  border-top:1px solid rgba(10,31,60,.07);
+  padding:1.4rem 1.5rem 1.6rem;
+  text-align:left;
+}
+
+/* step list */
+.step{
+  display:flex; gap:.9rem; align-items:flex-start;
+  padding:.55rem 0;
+}
+.step-num{
+  flex:0 0 auto;
+  width:30px; height:30px; border-radius:50%;
+  background:var(--pih-navy);
+  color:var(--pih-gold-light);
+  display:flex; align-items:center; justify-content:center;
+  font-size:.8rem; font-weight:700;
+  margin-top:.1rem;
+}
+.step-body{ font-size:.92rem; line-height:1.55; }
+.step-body strong{ color:var(--pih-navy); }
+.mailbox-chip{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:rgba(58,141,222,.1);
+  border:1px dashed rgba(58,141,222,.5);
+  color:var(--pih-navy);
+  border-radius:.55rem; padding:.4rem .75rem;
+  font-size:.85rem; font-weight:600;
+  word-break:break-all;
+  margin-top:.35rem;
+  cursor:pointer;
+}
+.mailbox-chip:hover{ background:rgba(58,141,222,.18); }
+.equip-list{ list-style:none; padding-left:0; margin:.4rem 0 0; }
+.equip-list li{
+  font-size:.9rem; padding:.18rem 0;
+}
+.equip-list .bi{ color:var(--pih-success); margin-right:.5rem; }
+
+.method-title{
+  display:flex; align-items:center; gap:.6rem;
+  font-weight:700; color:var(--pih-navy);
+  font-size:.98rem;
+  margin:1.1rem 0 .4rem;
+}
+.method-title .bi{ color:var(--pih-gold); font-size:1.1rem; }
+.method-title:first-child{ margin-top:0; }
+
+.banner{
+  display:flex; gap:.7rem; align-items:flex-start;
+  border-radius:.7rem; padding:.8rem 1rem;
+  font-size:.88rem; font-weight:500;
+  margin-top:1.2rem;
+}
+.banner .bi{ font-size:1.05rem; margin-top:.05rem; }
+.banner-success{ background:rgba(46,158,91,.1); color:#1d6e3e; border:1px solid rgba(46,158,91,.3); }
+.banner-info{ background:rgba(58,141,222,.1); color:#1e5fa8; border:1px solid rgba(58,141,222,.3); }
+.banner-gold{ background:rgba(201,162,75,.12); color:#8a6a23; border:1px solid rgba(201,162,75,.4); }
+
+/* download buttons */
+.btn-download{
+  display:flex; align-items:center; justify-content:center; gap:.55rem;
+  border-radius:.65rem; padding:.65rem 1rem;
+  font-weight:600; font-size:.9rem;
+  border:1.5px solid var(--pih-navy);
+  color:var(--pih-navy); background:var(--pih-white);
+  transition:all .3s; min-height:48px;
+  width:100%;
+}
+.btn-download:hover{ background:var(--pih-navy); color:var(--pih-white); }
+.btn-download.os-highlight{
+  background:linear-gradient(135deg,var(--pih-navy-2),var(--pih-navy-3));
+  color:var(--pih-gold-light);
+  border-color:var(--pih-gold);
+  box-shadow:0 6px 16px rgba(10,31,60,.28);
+}
+.os-tag{
+  font-size:.62rem; font-weight:700; letter-spacing:.08em;
+  background:var(--pih-gold); color:var(--pih-navy);
+  border-radius:1rem; padding:.12rem .5rem;
+  text-transform:uppercase;
+}
+
+/* supported content chips */
+.content-chips{ display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.4rem; }
+.content-chips span{
+  background:var(--pih-white);
+  border:1px solid rgba(10,31,60,.14);
+  border-radius:2rem;
+  font-size:.78rem; font-weight:600; color:var(--pih-navy);
+  padding:.3rem .75rem;
+  display:inline-flex; align-items:center; gap:.35rem;
+}
+.content-chips .bi{ color:var(--pih-gold); font-size:.8rem; }
+
+/* ---------- SECTION HEADINGS ---------- */
+.section-title{
+  font-family:'Playfair Display',serif;
+  color:var(--pih-navy);
+  font-weight:600;
+  font-size:clamp(1.35rem,4vw,1.8rem);
+}
+
+/* ---------- HELP ---------- */
+.help-card{
+  background:linear-gradient(150deg,var(--pih-navy) 0%,var(--pih-navy-3) 100%);
+  color:var(--pih-white);
+  border-radius:1.25rem;
+  box-shadow:var(--shadow-card);
+  overflow:hidden;
+  position:relative;
+}
+.help-card::before{
+  content:""; position:absolute; top:-60px; right:-60px;
+  width:220px; height:220px; border-radius:50%;
+  background:radial-gradient(circle, rgba(201,162,75,.25), transparent 70%);
+}
+.help-icon{
+  width:64px; height:64px; border-radius:50%;
+  background:rgba(201,162,75,.16);
+  border:1.5px solid rgba(201,162,75,.5);
+  color:var(--pih-gold-light);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.6rem;
+  flex:0 0 auto;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--pih-gold),var(--pih-gold-light));
+  color:var(--pih-navy);
+  font-weight:700; border:none; border-radius:.7rem;
+  padding:.7rem 1.5rem; min-height:46px;
+  transition:all .3s;
+}
+.btn-gold:hover{ filter:brightness(1.06); transform:translateY(-1px); color:var(--pih-navy); box-shadow:0 8px 18px rgba(201,162,75,.4); }
+
+/* ---------- QR ---------- */
+.qr-card{
+  background:var(--pih-white);
+  border-radius:1.25rem;
+  box-shadow:var(--shadow-card);
+  border:1px solid rgba(10,31,60,.06);
+}
+.qr-frame{
+  display:inline-block;
+  padding:14px;
+  background:var(--pih-white);
+  border-radius:1rem;
+  border:2px solid var(--pih-gold);
+  box-shadow:0 10px 26px rgba(10,31,60,.12);
+}
+#qrcode img, #qrcode canvas{ display:block; border-radius:.4rem; }
+.qr-url{
+  font-size:.82rem; color:#5a6478;
+  word-break:break-all;
+  background:var(--pih-grey);
+  border-radius:.5rem; padding:.45rem .8rem;
+  display:inline-block;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  background:var(--pih-navy);
+  color:rgba(255,255,255,.65);
+  font-size:.82rem;
+  padding:1.6rem 1rem;
+}
+footer .gold{ color:var(--pih-gold); }
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(26px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.reveal{ opacity:0; }
+.reveal.visible{ animation:fadeUp .7s cubic-bezier(.2,.8,.3,1) forwards; }
+.hero .reveal.visible{ animation-duration:.9s; }
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1 !important; animation:none !important; }
+  .option-card,.btn-pih,.btn-download{ transition:none; }
+}
+
+/* touch targets */
+@media (max-width:576px){
+  .btn-pih,.btn-download,.btn-gold{ width:100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero text-center">
+  <div class="container">
+    <div id="brandSlot" class="reveal visible">
+      <a class="brand-wordmark" href="#" aria-label="Power International Holding">
+        <span class="wm-top">P<span>I</span>H</span>
+        <span class="wm-bottom">Power International Holding</span>
+      </a>
+    </div>
+    <div class="gold-line reveal visible"></div>
+    <h1 class="reveal visible" id="roomTitle">Mr. President Lounge<br class="d-sm-none"> Meeting Assistant</h1>
+    <p class="subtitle mt-2 reveal visible">Select the activity you would like to perform</p>
+    <p class="lead-desc mt-3 reveal visible" id="roomDesc">
+      Welcome to the Mr. President Lounge. Choose one of the options below for
+      meeting collaboration, conferencing, or screen sharing.
+    </p>
+  </div>
+</header>
+
+<!-- ================= CARDS ================= -->
+<main>
+<section class="cards-wrap pb-4">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- CARD 1 : TEAMS -->
+      <div class="col-12 col-lg-4 reveal">
+        <div class="option-card">
+          <div class="card-top">
+            <div class="icon-badge"><i class="bi bi-microsoft-teams" aria-hidden="true"></i></div>
+            <h3>Teams Meeting</h3>
+            <p class="card-desc">Use the room's Microsoft Teams Room system for the best meeting experience.</p>
+            <button class="btn btn-pih mb-3" data-bs-toggle="collapse" data-bs-target="#teamsInstructions"
+                    aria-expanded="false" aria-controls="teamsInstructions">
+              View Instructions <i class="bi bi-chevron-down ms-1"></i>
+            </button>
+          </div>
+          <div class="collapse" id="teamsInstructions">
+            <div class="instructions">
+              <div class="step"><div class="step-num">1</div>
+                <div class="step-body">Schedule a <strong>Microsoft Teams</strong> meeting.</div></div>
+              <div class="step"><div class="step-num">2</div>
+                <div class="step-body">Add the following room mailbox as a participant:<br>
+                  <span class="mailbox-chip" id="mailboxChip" role="button" title="Tap to copy">
+                    <i class="bi bi-envelope"></i><span id="mailboxText">pibboardroom@powerholding-intl.com</span>
+                    <i class="bi bi-clipboard" id="copyIcon"></i>
+                  </span>
+                </div></div>
+              <div class="step"><div class="step-num">3</div>
+                <div class="step-body">The meeting will automatically appear on the <strong>room tablet</strong>.</div></div>
+              <div class="step"><div class="step-num">4</div>
+                <div class="step-body">Press <strong>Join</strong> on the room tablet.</div></div>
+              <div class="step"><div class="step-num">5</div>
+                <div class="step-body">The room system will automatically use:
+                  <ul class="equip-list">
+                    <li><i class="bi bi-check-circle-fill"></i>MAXHUB Camera</li>
+                    <li><i class="bi bi-check-circle-fill"></i>Room Microphones</li>
+                    <li><i class="bi bi-check-circle-fill"></i>Room Speakers</li>
+                    <li><i class="bi bi-check-circle-fill"></i>Meeting Room Displays</li>
+                  </ul>
+                </div></div>
+              <div class="step"><div class="step-num">6</div>
+                <div class="step-body">Begin your meeting.</div></div>
+              <div class="banner banner-success">
+                <i class="bi bi-star-fill"></i>
+                <span>Recommended option for Microsoft Teams meetings.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 : BYOD / ZOOM -->
+      <div class="col-12 col-lg-4 reveal">
+        <div class="option-card">
+          <div class="card-top">
+            <div class="icon-badge"><i class="bi bi-laptop" aria-hidden="true"></i></div>
+            <h3>BYOD / Zoom Call</h3>
+            <p class="card-desc">Use your own laptop with Zoom, Webex, Google Meet, Teams or any conferencing platform.</p>
+            <button class="btn btn-pih mb-3" data-bs-toggle="collapse" data-bs-target="#byodInstructions"
+                    aria-expanded="false" aria-controls="byodInstructions">
+              View Instructions <i class="bi bi-chevron-down ms-1"></i>
+            </button>
+          </div>
+          <div class="collapse" id="byodInstructions">
+            <div class="instructions">
+
+              <div class="method-title"><i class="bi bi-broadcast-pin"></i> Method 1 — MAXHUB Wireless Dongle</div>
+              <div class="step"><div class="step-num">1</div>
+                <div class="step-body">Connect the <strong>MAXHUB wireless dongle</strong> to your laptop.</div></div>
+              <div class="step"><div class="step-num">2</div>
+                <div class="step-body">Launch <strong>MAXHUB Connect</strong> software.</div></div>
+              <div class="step"><div class="step-num">3</div>
+                <div class="step-body">If not installed, download and install it:</div></div>
+
+              <div class="row g-2 my-1">
+                <div class="col-12 col-sm-6">
+                  <a class="btn btn-download" id="winDownload" href="https://connect.maxhub.com/downloads" target="_blank" rel="noopener">
+                    <i class="bi bi-windows"></i> Windows Download
+                    <span class="os-tag d-none" id="winTag">Your OS</span>
+                  </a>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <a class="btn btn-download" id="macDownload" href="https://connect.maxhub.com/downloads" target="_blank" rel="noopener">
+                    <i class="bi bi-apple"></i> macOS Download
+                    <span class="os-tag d-none" id="macTag">Your OS</span>
+                  </a>
+                </div>
+              </div>
+
+              <p class="step-body mt-2 mb-1"><strong>After installation:</strong></p>
+              <div class="step"><div class="step-num">1</div>
+                <div class="step-body">Open <strong>MAXHUB Connect</strong>.</div></div>
+              <div class="step"><div class="step-num">2</div>
+                <div class="step-body">Follow the connection instructions.</div></div>
+              <div class="step"><div class="step-num">3</div>
+                <div class="step-body">Start your Zoom, Webex, Teams or Google Meet session.</div></div>
+
+              <div class="method-title"><i class="bi bi-usb-symbol"></i> Method 2 — USB-C Direct Connection</div>
+              <div class="step"><div class="step-num">1</div>
+                <div class="step-body">Connect the room <strong>USB-C cable</strong> to your laptop.</div></div>
+              <div class="step"><div class="step-num">2</div>
+                <div class="step-body">Accept the connection request shown on the <strong>room tablet</strong>.</div></div>
+              <div class="step"><div class="step-num">3</div>
+                <div class="step-body">The room camera, microphones and speakers will become available.</div></div>
+              <div class="step"><div class="step-num">4</div>
+                <div class="step-body">Start your preferred meeting platform.</div></div>
+
+              <div class="banner banner-info">
+                <i class="bi bi-people-fill"></i>
+                <span>Ideal for guests and visitors.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 : SCREEN SHARING -->
+      <div class="col-12 col-lg-4 reveal">
+        <div class="option-card">
+          <div class="card-top">
+            <div class="icon-badge"><i class="bi bi-cast" aria-hidden="true"></i></div>
+            <h3>Screen Sharing</h3>
+            <p class="card-desc">Share presentations and content on the room display screens.</p>
+            <button class="btn btn-pih mb-3" data-bs-toggle="collapse" data-bs-target="#shareInstructions"
+                    aria-expanded="false" aria-controls="shareInstructions">
+              View Instructions <i class="bi bi-chevron-down ms-1"></i>
+            </button>
+          </div>
+          <div class="collapse" id="shareInstructions">
+            <div class="instructions">
+
+              <div class="method-title"><i class="bi bi-plug"></i> Option 1 — USB-C Cable Sharing</div>
+              <div class="step"><div class="step-num">1</div>
+                <div class="step-body">Connect the room <strong>USB-C cable</strong>.</div></div>
+              <div class="step"><div class="step-num">2</div>
+                <div class="step-body">Click <strong>Share Screen</strong> on the room tablet if required.</div></div>
+              <div class="step"><div class="step-num">3</div>
+                <div class="step-body">Begin presenting.</div></div>
+
+              <div class="method-title"><i class="bi bi-wifi"></i> Option 2 — MAXHUB Wireless Sharing</div>
+              <div class="step"><div class="step-num">1</div>
+                <div class="step-body">Open <strong>MAXHUB Connect</strong>.</div></div>
+              <div class="step"><div class="step-num">2</div>
+                <div class="step-body">Select <strong>Screen Sharing</strong>.</div></div>
+              <div class="step"><div class="step-num">3</div>
+                <div class="step-body">Enter the <strong>pairing code</strong> if requested.</div></div>
+              <div class="step"><div class="step-num">4</div>
+                <div class="step-body">Start presenting wirelessly.</div></div>
+
+              <p class="step-body mt-3 mb-1"><strong>Supported content:</strong></p>
+              <div class="content-chips">
+                <span><i class="bi bi-file-earmark-slides"></i>PowerPoint</span>
+                <span><i class="bi bi-file-earmark-spreadsheet"></i>Excel</span>
+                <span><i class="bi bi-file-earmark-word"></i>Word</span>
+                <span><i class="bi bi-file-earmark-pdf"></i>PDF</span>
+                <span><i class="bi bi-play-btn"></i>Videos</span>
+                <span><i class="bi bi-window"></i>Browser Tabs</span>
+                <span><i class="bi bi-grid"></i>Applications</span>
+              </div>
+
+              <div class="banner banner-gold">
+                <i class="bi bi-display"></i>
+                <span>Wireless and wired presentation supported.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= HELP ================= -->
+<section class="py-4">
+  <div class="container">
+    <div class="help-card p-4 p-md-5 reveal">
+      <div class="d-flex flex-column flex-md-row align-items-md-center gap-4 position-relative">
+        <div class="help-icon"><i class="bi bi-headset" aria-hidden="true"></i></div>
+        <div class="flex-grow-1">
+          <h2 class="section-title text-white mb-1" style="color:#fff">Need Assistance?</h2>
+          <p class="mb-1 fw-semibold" style="color:var(--pih-gold-light)">Contact IT Service Desk</p>
+          <p class="mb-0" style="color:rgba(255,255,255,.8); font-size:.92rem; max-width:560px;">
+            For assistance with meeting rooms, Teams Rooms, Zoom calls, audio, video,
+            microphones, displays, or screen sharing, please contact the IT Support Team.
+          </p>
+        </div>
+        <div class="text-md-end">
+          <a class="btn btn-gold" id="itEmailBtn" href="mailto:it.servicedesk@powerholding.com">
+            <i class="bi bi-envelope-fill me-2"></i><span id="itEmailText">it.servicedesk@powerholding.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QR ================= -->
+<section class="py-4 pb-5">
+  <div class="container">
+    <div class="qr-card p-4 p-md-5 text-center reveal">
+      <h2 class="section-title mb-1">Scan to Access</h2>
+      <p class="fw-semibold mb-3" style="color:var(--pih-gold); letter-spacing:.04em;" id="qrRoomLabel">
+        Mr. President Lounge Assistant
+      </p>
+      <div class="gold-line" style="margin-top:0"></div>
+      <div class="qr-frame my-3" aria-label="QR code linking to this page">
+        <div id="qrcode"></div>
+      </div>
+      <p class="mb-2" style="font-size:.9rem; color:#5a6478;">
+        Scan this QR code with your phone camera to open the
+        <strong>Mr. President Lounge Assistant</strong> on your device.
+      </p>
+      <span class="qr-url" id="qrUrlLabel"></span>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="text-center">
+  <div class="container">
+    <div class="mb-1">
+      <span class="gold fw-semibold">POWER INTERNATIONAL HOLDING</span>
+    </div>
+    <div>Mr. President Lounge &middot; Meeting Room Assistant &middot; IT Service Desk:
+      <a href="mailto:it.servicedesk@powerholding.com" class="gold text-decoration-none" id="footerEmail">it.servicedesk@powerholding.com</a>
+    </div>
+    <div class="mt-2" style="font-size:.74rem; color:rgba(255,255,255,.4);">
+      &copy; <span id="year"></span> Power International Holding. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="config.js"></script>
+<script>
+(function(){
+  "use strict";
+  var cfg = (typeof PIH_CONFIG !== "undefined") ? PIH_CONFIG : {};
+
+  /* ---------- Apply configuration ---------- */
+  if (cfg.roomMailbox){
+    document.getElementById("mailboxText").textContent = cfg.roomMailbox;
+  }
+  if (cfg.itEmail){
+    var btn = document.getElementById("itEmailBtn");
+    btn.href = "mailto:" + cfg.itEmail;
+    document.getElementById("itEmailText").textContent = cfg.itEmail;
+    var f = document.getElementById("footerEmail");
+    f.href = "mailto:" + cfg.itEmail;
+    f.textContent = cfg.itEmail;
+  }
+  if (cfg.maxhubDownloadUrl){
+    document.getElementById("winDownload").href = cfg.maxhubDownloadUrl;
+    document.getElementById("macDownload").href = cfg.maxhubDownloadUrl;
+  }
+  if (cfg.logoImage){
+    document.getElementById("brandSlot").innerHTML =
+      '<img class="brand-logo-img" src="' + cfg.logoImage + '" alt="' + (cfg.companyName || "Company") + ' logo">';
+  }
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---------- QR code (auto-detect or fixed URL) ---------- */
+  var qrTarget = (cfg.baseUrl && cfg.baseUrl.trim() !== "")
+      ? cfg.baseUrl.trim()
+      : window.location.href.split("#")[0];
+
+  try{
+    new QRCode(document.getElementById("qrcode"), {
+      text: qrTarget,
+      width: 196,
+      height: 196,
+      colorDark: "#0a1f3c",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  }catch(e){
+    document.getElementById("qrcode").innerHTML =
+      '<p style="font-size:.8rem;color:#888;max-width:196px;">QR code unavailable offline.<br>URL: ' + qrTarget + '</p>';
+  }
+  document.getElementById("qrUrlLabel").textContent = qrTarget;
+
+  /* ---------- OS detection: highlight download button ---------- */
+  var ua = navigator.userAgent || "";
+  var isMac = /Macintosh|Mac OS X|iPhone|iPad/i.test(ua);
+  var isWin = /Windows/i.test(ua);
+  if (isMac && !isWin){
+    document.getElementById("macDownload").classList.add("os-highlight");
+    document.getElementById("macTag").classList.remove("d-none");
+  } else if (isWin){
+    document.getElementById("winDownload").classList.add("os-highlight");
+    document.getElementById("winTag").classList.remove("d-none");
+  }
+
+  /* ---------- Copy room mailbox on tap ---------- */
+  var chip = document.getElementById("mailboxChip");
+  chip.addEventListener("click", function(){
+    var text = document.getElementById("mailboxText").textContent;
+    var icon = document.getElementById("copyIcon");
+    function done(){
+      icon.className = "bi bi-clipboard-check";
+      setTimeout(function(){ icon.className = "bi bi-clipboard"; }, 1800);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){});
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = text; document.body.appendChild(ta);
+      ta.select();
+      try{ document.execCommand("copy"); done(); }catch(e){}
+      document.body.removeChild(ta);
+    }
+  });
+
+  /* ---------- Scroll reveal animations ---------- */
+  var revealEls = document.querySelectorAll(".reveal:not(.visible)");
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add("visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("visible"); });
+  }
+})();
+</script>
+</body>
+</html>
