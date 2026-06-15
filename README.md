@@ -26,19 +26,13 @@ npx http-server "E:\Lounge QRCode\President Lounge" -p 8080
 
 Then open: `http://localhost:8080`
 
-## Test from mobile phones
-
-1. Find your PC's LAN IP: open Command Prompt → `ipconfig` → note the IPv4 address (e.g. `192.168.1.100`).
-2. On your phone (same Wi-Fi network), open: `http://192.168.1.100:8080`
-3. The QR code on the page **auto-detects the URL it is served from**, so when the page is opened via the LAN IP, the QR code automatically points to that IP. Print or display that QR code for testing.
-4. If Windows Firewall blocks access, allow inbound TCP port 8080 (or temporarily allow Python/Node through the firewall).
 
 ## Configuration (`config.js`)
 
 | Setting | Default | Notes |
 |---|---|---|
-| `baseUrl` | `""` (auto-detect) | Leave empty for automatic QR URL. Set a fixed URL to override, e.g. `https://meeting.powerholding.com/pibboardroom` |
-| `roomMailbox` | `pibboardroom@powerholding-intl.com` | Teams Room mailbox shown in Card 1 (tap-to-copy) |
+| `baseUrl` | `""` (auto-detect) | Leave empty for automatic QR URL. Set a fixed URL to override, e.g. `https://meeting.powerholding.com/pihboardroom` |
+| `roomMailbox` | `pihboardroom@powerholding-intl.com` | Teams Room mailbox shown in Card 1 (tap-to-copy) |
 | `itEmail` | `it.servicedesk@powerholding.com` | Help section + footer |
 | `maxhubDownloadUrl` | `https://connect.maxhub.com/downloads` | Both download buttons |
 | `logoImage` | `""` (text wordmark) | Set to e.g. `assets/pih-logo.png` to use the official logo |
