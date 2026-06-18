@@ -22,7 +22,7 @@ const PIH_CONFIG = {
   companyName: "Power International Holding",
 
   /* Teams Room mailbox added as meeting participant */
-  roomMailbox: "pibboardroom@powerholding-intl.com",
+  roomMailbox: "pihboardroom@powerholding-intl.com",
 
   /* IT Service Desk contact */
   itEmail: "it.servicedesk@powerholding.com",
